@@ -1,6 +1,6 @@
 [tool.autohooks]
 mode = 'venv'
-pre-commit = ["autohooks.plugins.black", "autohooks.plugins.isort", "autohooks.plugins.flake8"]
+pre-commit = ["autohooks.plugins.black", "autohooks.plugins.isort"]
 
 [tool.autohooks.plugins.black]
 arguments = ["--check"]
@@ -10,6 +10,3 @@ include = ['src/*.py', '*.py']
 
 [tool.isort]
 profile = "black"
-
-[tool.autohooks.plugins.flake8]
-include = ['src/*.py', '*.py']
