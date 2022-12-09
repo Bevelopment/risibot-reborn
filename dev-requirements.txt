@@ -4,3 +4,7 @@ black==22.12.0
 isort==5.10.1
 mypy==0.991
 autohooks==22.11.2
+autohooks-plugin-black==22.11.0
+autohooks-plugin-isort==22.8.0
+autohooks-plugin-pylint==22.8.1
+autohooks-plugin-flake8==22.6.1

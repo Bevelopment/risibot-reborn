@@ -1,11 +1,10 @@
-# Import the necessary libraries.
-import disnake
 from disnake.ext import commands
 
 from configs import BOT_TOKEN
 
 # Creating a commands.Bot() instance, and assigning it to "bot"
 bot = commands.Bot()
+
 
 # When the bot is ready, run this code.
 @bot.event
@@ -21,7 +20,8 @@ async def ping(inter):
 @bot.slash_command()
 async def server(inter):
     await inter.response.send_message(
-        f"Server name: {inter.guild.name}\nTotal members: {inter.guild.member_count}"
+        f"Server name: {inter.guild.name}\n"
+        + f"Total members: {inter.guild.member_count}"
     )
 
 
