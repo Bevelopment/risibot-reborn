@@ -16,7 +16,6 @@ bot = commands.Bot(
     test_guilds=[GUILD_TEST_ID],
 )
 
-
 # checking when the bot is ready
 @bot.event
 async def on_ready():
