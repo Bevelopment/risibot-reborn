@@ -2,7 +2,7 @@ import disnake
 from disnake.ext import commands
 from disnake.ext.commands import message_command, slash_command, user_command
 
-from configs import CLR_ERROR, CLR_SUCCESS
+from configs import ARCHIVE_CHANNEL, CLR_ERROR, CLR_SUCCESS
 
 
 class Moderation(commands.Cog):
@@ -135,7 +135,7 @@ class Moderation(commands.Cog):
         overwrite = channel.overwrites_for(inter.guild.default_role)
         overwrite.send_messages = False
         overwrite.add_reactions = False
-        category = disnake.utils.get(inter.guild.channels, id=config.archive_id)
+        category = disnake.utils.get(inter.guild.channels, id=ARCHIVE_CHANNEL)
 
         embed = disnake.Embed(title=":white_check_mark: Archived!", color=CLR_SUCCESS)
         await inter.send(embed=embed)
