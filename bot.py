@@ -8,11 +8,12 @@ from configs import BOT_TOKEN, GUILD_TEST_ID, STATUS_TASK
 
 asyncio.sleep(5.9)  # to avoid discord rate limits
 os.system("clear")
-
+command_sync_flags = commands.CommandSyncFlags.default()
+command_sync_flags.sync_commands_debug = True
 # Creating a commands.Bot() instance, and assigning it to "bot"
 bot = commands.Bot(
     command_prefix="!",
-    sync_commands_debug=True,
+    command_sync_flags=command_sync_flags,
     test_guilds=[GUILD_TEST_ID],
 )
 
