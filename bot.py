@@ -38,14 +38,6 @@ async def status_task():
     )
 
 
-@bot.slash_command()
-async def server(inter):
-    await inter.response.send_message(
-        f"Server name: {inter.guild.name}\n"
-        + f"Total members: {inter.guild.member_count}"
-    )
-
-
 # loading all extensions in the cogs folder
 if __name__ in "__main__":
     py_path = f"cogs"
