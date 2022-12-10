@@ -4,10 +4,6 @@ from disnake.ext.commands import message_command, slash_command, user_command
 
 from configs import CLR_ERROR, CLR_SUCCESS
 
-# ===NOTICE===
-# i would recommend making a role
-# with all permissions for admin to run these commands
-
 
 class Moderation(commands.Cog):
     def __init__(self, bot):
@@ -22,14 +18,14 @@ class Moderation(commands.Cog):
             embed = disnake.Embed(
                 title=":white_check_mark: Changed Nickname!",
                 description=f"**{member}'s** new nickname is **{nickname}**!",
-                color=config.success,
+                color=CLR_SUCCESS,
             )
             await inter.send(embed=embed)
         except:
             embed = disnake.Embed(
                 title="Error",
                 description=f"An error occurred while trying to change the nickname of {member}",
-                color=config.error,
+                color=CLR_ERROR,
             )
             embed.add_field(
                 name="Faq",
@@ -44,7 +40,7 @@ class Moderation(commands.Cog):
         embed = disnake.Embed(
             title=f"{member} was kicked by {inter.author}",
             description=reason,
-            color=config.success,
+            color=CLR_SUCCESS,
         )
         await inter.send(embed=embed)
 
