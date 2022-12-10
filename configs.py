@@ -12,3 +12,5 @@ CLR_WARNING = int(f"{config['CLR_WARNING']}", 16)
 
 LOGS_CHANNEL = int(f"{config['LOGS_CHANNEL']}")
 ARCHIVE_CHANNEL = int(f"{config['ARCHIVE_CHANNEL']}")
+
+SUPPORT = config["SUPPORT"]
