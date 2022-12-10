@@ -5,6 +5,8 @@ import disnake
 from disnake.ext import commands
 from disnake.ext.commands import message_command, slash_command, user_command
 
+from configs import SUPPORT
+
 
 class General(commands.Cog):
     def __init__(self, bot):
@@ -18,6 +20,13 @@ class General(commands.Cog):
             color=disnake.Color.green(),
         )
         await inter.response.send_message(embed=embed)
+
+    @slash_command(
+        name="support",
+        description="let newcomers to reach us and let us answer their needs",
+    )
+    async def support(self, inter):
+        await inter.author.send(f"Rendez-vous sur le discord du support : {SUPPORT} !")
 
     @slash_command(name="bienvenue", description="Welcome the newcommer")
     async def bienvenue(self, inter):
