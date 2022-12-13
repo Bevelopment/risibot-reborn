@@ -5,7 +5,7 @@ import disnake
 from disnake.ext import commands
 from disnake.ext.commands import message_command, slash_command, user_command
 
-from configs import SUPPORT
+from configs import INVITE, SUPPORT
 
 
 class General(commands.Cog):
@@ -23,8 +23,7 @@ class General(commands.Cog):
 
     @slash_command(name="invite", description="invite bot on new serv")
     async def invite(self, inter):
-        invite = "https://discord.com/api/oauth2/authorize?client_id=1050387869996425276&permissions=8&scope=bot%20applications.commands"
-        await inter.author.send(f"Voici ton lien d'invitation: {invite}")
+        await inter.author.send(f"Voici ton lien d'invitation: {INVITE}")
 
     @slash_command(
         name="support",
