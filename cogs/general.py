@@ -21,6 +21,11 @@ class General(commands.Cog):
         )
         await inter.response.send_message(embed=embed)
 
+    @slash_command(name="invite", description="invite bot on new serv")
+    async def invite(self, inter):
+        invite = "https://discord.com/api/oauth2/authorize?client_id=1050387869996425276&permissions=8&scope=bot%20applications.commands"
+        await inter.author.send(f"Voici ton lien d'invitation: {invite}")
+
     @slash_command(
         name="support",
         description="let newcomers to reach us and let us answer their needs",
