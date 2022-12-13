@@ -5,7 +5,7 @@ import disnake
 from disnake.ext import commands
 from disnake.ext.commands import message_command, slash_command, user_command
 
-from configs import SUPPORT
+from configs import INVITE, SUPPORT
 
 
 class General(commands.Cog):
@@ -20,6 +20,10 @@ class General(commands.Cog):
             color=disnake.Color.green(),
         )
         await inter.response.send_message(embed=embed)
+
+    @slash_command(name="invite", description="invite bot on new serv")
+    async def invite(self, inter):
+        await inter.author.send(f"Voici ton lien d'invitation: {INVITE}")
 
     @slash_command(
         name="support",
