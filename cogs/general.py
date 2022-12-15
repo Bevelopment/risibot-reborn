@@ -5,7 +5,7 @@ import disnake
 from disnake.ext import commands
 from disnake.ext.commands import message_command, slash_command, user_command
 
-from configs import INVITE, SUPPORT
+from configs import INVITE_LINK, SUPPORT_LINK
 
 
 class General(commands.Cog):
@@ -23,14 +23,16 @@ class General(commands.Cog):
 
     @slash_command(name="invite", description="invite bot on new serv")
     async def invite(self, inter):
-        await inter.author.send(f"Voici ton lien d'invitation: {INVITE}")
+        await inter.author.send(f"Voici ton lien d'invitation: {INVITE_LINK}")
 
     @slash_command(
         name="support",
         description="let newcomers to reach us and let us answer their needs",
     )
     async def support(self, inter):
-        await inter.author.send(f"Rendez-vous sur le discord du support : {SUPPORT} !")
+        await inter.author.send(
+            f"Rendez-vous sur le discord du support : {SUPPORT_LINK} !"
+        )
 
     @slash_command(name="bienvenue", description="Welcome the newcommer")
     async def bienvenue(self, inter):
